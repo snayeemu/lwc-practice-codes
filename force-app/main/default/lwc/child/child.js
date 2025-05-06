@@ -19,4 +19,24 @@ export default class Child extends LightningElement {
             this.name = 'Galib';
             this.users = [{}];
         }
+
+        @api
+        handleValidate(value, value1) {
+            console.log('Child Component Clicked');
+            console.log(value);
+            console.log(value1);
+
+            const allValid = [
+                ...this.template.querySelectorAll('lightning-input'),
+            ].reduce((validSoFar, inputCmp) => {
+                inputCmp.reportValidity();
+                return validSoFar && inputCmp.checkValidity();
+            }, true); 
+            return allValid;
+        }
+
+        @api
+        clickMe = () => {
+            console.log('Child Method clicked');
+        }
 }

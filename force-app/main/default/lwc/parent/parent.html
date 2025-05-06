@@ -2,12 +2,14 @@
     <lightning-card  variant="Narrow"  title="Parent Component" icon-name="standard:account">
         <div class="slds-p-horizontal_small">
             <p>Parent Component</p>
+            <lightning-button variant="brand" label="Call Child Method" title="Call Child Method" onclick={handleClick}></lightning-button>
             <!-- use child component -->
-             <c-child users={users}>
-                <p>I am from parent component</p>
-                <p slot="order">Named Slot</p>
-             </c-child>
-             <c-hello-world></c-hello-world>
+            <div>
+                <c-child users={users}>
+                    <p>I am from parent component</p>
+                    <p slot="order">Named Slot</p>
+                </c-child> 
+            </div>
         </div>
         <div slot="footer">Parent Card Footer</div>
     </lightning-card>

@@ -3,10 +3,13 @@
         <lightning-button slot="actions" variant="brand" label="Click Me" title="titleName" onclick={handleClick}></lightning-button>
         <div class="slds-p-horizontal_small">
             <p>Child Component Slots</p>
+            <div class="slds-p-horizontal_small">
+                <lightning-input message-when-value-missing="🔥 The Value is required" type="text" variant="label-stacked" label="Account Name" required></lightning-input>
+            </div>
             <slot style="color: aqua"></slot>
             <slot name="order"></slot>
             <lightning-button variant="brand" label="Change users" onclick={handleClick}></lightning-button>
         </div>
         <div slot="footer">Card Footer</div>
     </lightning-card>
-</template>
+</template> 
