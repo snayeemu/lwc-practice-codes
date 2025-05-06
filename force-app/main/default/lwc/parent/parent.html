@@ -1,0 +1,14 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Parent Component" icon-name="standard:account">
+        <div class="slds-p-horizontal_small">
+            <p>Parent Component</p>
+            <!-- use child component -->
+             <c-child users={users}>
+                <p>I am from parent component</p>
+                <p slot="order">Named Slot</p>
+             </c-child>
+             <c-hello-world></c-hello-world>
+        </div>
+        <div slot="footer">Parent Card Footer</div>
+    </lightning-card>
+</template>

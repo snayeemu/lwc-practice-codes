@@ -1,0 +1,27 @@
+
+
+<template>
+    <lightning-button label="Click Me" title="Click Me" onclick={handleButtonClick}></lightning-button>
+
+    <template lwc:if={showTom}>
+            I am tom 
+            <img width="300" src="https://cdn.pixabay.com/photo/2020/05/11/15/38/tom-5158824_1280.png" alt="">
+    </template>
+    <template lwc:elseif={showJerry}>
+            I am jerry 
+            <img width="300" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzXXKomj9Aq1qNvureQqw2GQzrLt4xe9TFPQ&s" alt="">
+    </template>
+    <template lwc:else>
+            I am dog
+            <img width="300" src={dogImage} alt="">
+    </template>
+
+    <template for:each={users} for:item="user" for:index='i' >
+        <h1 key={user.email} class="slds-m-around_large">
+            {user.name} <br> {user.email}
+        </h1>
+        <div key={user.email} class="slds-m-around_large">
+            <li>I am inside a div</li>
+        </div>
+    </template>
+</template>

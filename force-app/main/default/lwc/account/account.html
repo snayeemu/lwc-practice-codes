@@ -1,0 +1,38 @@
+<template>
+    <div class="slds-p-around_medium lgc-bg">
+        <a href="JavasCript:void(0)" onclick={handleClick}>Click Me</a>
+        <lightning-input name="FirstName" type="text" label="Enter First Name" title="First Name" placeholder="Enter First Name" required onchange={handleChange}></lightning-input>
+        <lightning-input name="LastName" type="text" label="Enter Last Name" placeholder="Enter Last Name" required onchange={handleChange}></lightning-input>
+        <lightning-input name="Email" type="email" label="Enter Email address" placeholder="Email here..." onchange={handleChange}></lightning-input>
+        <lightning-input name="number_of_employees__c" type="number" label="Number of Employees" onchange={handleChange}></lightning-input>
+        <lightning-input name="salary__c" type="number" formatter="currency" step="1" label="Salary" onchange={handleChange}></lightning-input>
+        <lightning-input name="due_date__c" type="date" label="Enter a date" onchange={handleChange}></lightning-input>
+        <lightning-input name="completed__c" type="checkbox" label="Completed?" checked="true" onchange={handleChange}></lightning-input>
+        <lightning-combobox
+            name="status__c"
+            label="Status"
+            value={value}
+            placeholder="Select Progress"
+            options={options}
+            onchange={handleChange}
+             ></lightning-combobox>
+
+        <lightning-button variant="brand" label="Create Account" title="Create Account 😲" onclick={handleCreateAccount}></lightning-button>    
+        <!-- <lightning-input-name label="Full name"></lightning-input-name>
+        <lightning-input-address
+            address-label="Address"
+            street-label="Street"
+            city-label="City"
+            country-label="Country"
+            province-label="Province"
+            postal-code-label="PostalCode"
+            street="121 Spear St."
+            city="San Francisco"
+            country="US"
+            province="CA"
+            postal-code="94105"
+            required
+            field-level-help="Help Text for inputAddress field" ></lightning-input-address> -->
+
+    </div>
+</template>

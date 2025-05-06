@@ -1,0 +1,12 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Child Component" icon-name="standard:contact">
+        <lightning-button slot="actions" variant="brand" label="Click Me" title="titleName" onclick={handleClick}></lightning-button>
+        <div class="slds-p-horizontal_small">
+            <p>Child Component Slots</p>
+            <slot style="color: aqua"></slot>
+            <slot name="order"></slot>
+            <lightning-button variant="brand" label="Change users" onclick={handleClick}></lightning-button>
+        </div>
+        <div slot="footer">Card Footer</div>
+    </lightning-card>
+</template>
