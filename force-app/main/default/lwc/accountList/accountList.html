@@ -1,0 +1,16 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Recent Accounts" icon-name="standard:account">
+        <template if:true={recentAccounts}>
+            <template for:each={recentAccounts} for:item="account">
+                <div key={account.Id} class="slds-p-horizontal_small slds-m-horizontal_large slds-grid slds-gutters">
+                    <lightning-datatable
+                    key-field="Id"
+                    data={account}
+                    columns={columns}>
+                    </lightning-datatable>
+                </div>
+            </template>
+        </template>
+        <div slot="footer">Card Footer</div>
+    </lightning-card>
+</template>
