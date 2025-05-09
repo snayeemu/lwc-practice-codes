@@ -1,16 +1,27 @@
 <template>
     <lightning-card  variant="Narrow"  title="Recent Accounts" icon-name="standard:account">
         <template if:true={recentAccounts}>
-            <template for:each={recentAccounts} for:item="account">
-                <div key={account.Id} class="slds-p-horizontal_small slds-m-horizontal_large slds-grid slds-gutters">
+                <div class="slds-p-horizontal_small slds-m-horizontal_large slds-grid slds-gutters">
                     <lightning-datatable
                     key-field="Id"
-                    data={account}
-                    columns={columns}>
+                    data={recentAccounts}
+                    columns={columns}
+                    onrowaction={handleRowAction}
+                    >
                     </lightning-datatable>
                 </div>
-            </template>
         </template>
-        <div slot="footer">Card Footer</div>
+        <template if:true={recordId}>
+            <div slot="footer">
+                <lightning-record-form
+                object-api-name="Account"
+                record-id={recordId}
+                fields={fields}
+                onsuccess={handleEditSuccess}
+                
+                >
+                </lightning-record-form>
+            </div>
+        </template>
     </lightning-card>
 </template>

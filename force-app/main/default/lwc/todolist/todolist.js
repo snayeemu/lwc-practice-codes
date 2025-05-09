@@ -12,25 +12,35 @@ export default class Todolist extends LightningElement {
     handleTitleChange = (event) => {
         event.preventDefault();
         let {value, name, label} = event.target;
-        console.log('value:', value);
-        console.log('name:', name);
-        console.log('label:', label);
         this.todo.Title = value;
     }
     
     handleDescriptionChange = (event) => {
         event.preventDefault();
         let {value, name, label} = event.target;
-        console.log('value:', value);
-        console.log('name:', name);
-        console.log('label:', label); 
         this.todo.Description = value;
     }
 
     handleClick = (event) => {
         event.preventDefault();
-        this.todos.push(this.todo);
-        this.todoId = this.tod + 1;
-        // video 6; 50 minutes 
+        try{
+            this.todo.Id = this.todoId;
+            this.todoId++;
+            console.log('OUTPUT : ', JSON.stringify(this.todo), JSON.stringify(this.todos));
+            // this.todos.push(
+            //     Object.assign({}, this.todo)
+            // );
+            this.todos = [...this.todos, {...this.todo}];
+            console.log(JSON.stringify(this.todos));
+            // video 6; 50 minutes 
+        }
+        catch (e) {
+            console.log('Error : ',e);
+        }
+    }
+
+    handleTodoClick = (event) => {
+        event.preventDefault();
+
     }
 }

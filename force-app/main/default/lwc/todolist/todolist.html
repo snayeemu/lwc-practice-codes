@@ -7,13 +7,13 @@
         </div>
         <div class="slds-p-horizontal_small">
             <template if:true={todos} for:each={todos} for:item="todo" for:index="index">
-               <li key={con.Id}>
-                    {todo.Name}
-                    {todo.Title}
+               <li key={todo.Id}>
+
+                    <a href="#" onclick={handleTodoClick}>{todo.Title}</a>
                     {todo.Description}
                </li>
             </template>
         </div>
         <div slot="footer">Card Footer</div>
-    </lightning-card>
+    </lightning-card>  
 </template>
